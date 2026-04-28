@@ -1,189 +1,32 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+  background: #f5f5f5;
 }
 
-body{
-  background:#f6f3ee;
-  color:#111;
-  font-family:'Sora', sans-serif;
-  overflow-x:hidden;
-  user-select:none;
+#sketch-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-/* P5 BACKGROUND (Defining the parent p5 container in css)*/  
-#p5-container canvas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:0;
-  pointer-events:none;
+canvas {
+  display: block;
 }
 
-canvas{
-  display:block;
-}
-
-/* CONTENT ABOVE */
-.nav,
-.hero{
-  position:relative;
-  z-index:2;
-}
-
-/* NAV */
-.nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 32px;
-  z-index:10;
-}
-
-.brand{
-  font-weight:600;
-  letter-spacing:1px;
-}
-
-.nav-group{
-  display:flex;
-  gap:12px;
-}
-
-.btn{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:12px;
-  letter-spacing:1px;
-  padding:10px 14px;
-  border:1px solid rgba(0,0,0,0.2);
-  background:transparent;
-  cursor:pointer;
-  transition:all 0.25s ease;
-}
-
-.btn:hover{
-  background:#111;
-  color:#fff;
-}
-
-.btn:active{
-  background:#111;
-  color:#fff;
-}
-
-.btn.active{
-  background:#111;
-  color:#fff;
-  border-color:#111;
-  box-shadow:inset 0 0 0 2px #fff;
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:0 10%;
-}
-
-/* TAGLINE */
-.tagline{
-  font-family:'IBM Plex Mono', monospace;
-  color:#ff4d2e;
-  margin-bottom:24px;
-  letter-spacing:2px;
-  font-size:12px;
-}
-
-/* HERO TEXT */
-.hero-text{
-  font-weight:300;
-  font-size:64px;
-  line-height:1.2;
-  max-width:1000px;
-}
-
-/* ✨ NEW ANIMATION SYSTEM */
-
-/* scale in */
-.hero-text,
-.hero-sub{
-  transform:scale(0.98);
-  animation:scaleIn 1s forwards cubic-bezier(0.5, 1, 0.89, 1);
-}
-
-@keyframes scaleIn{
-  100%{
-    transform:scale(1);
-  }
-}
-
-/* base span state */
-.hero-text span,
-.hero-sub span{
-  display:inline-block;
-  opacity:0;
-  filter:blur(6px);
-  margin-right:8px;
-}
-
-/* stagger - hero */
-.hero-text span:nth-child(1){animation:fadeIn 0.8s 0.1s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(2){animation:fadeIn 0.8s 0.2s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(3){animation:fadeIn 0.8s 0.3s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(4){animation:fadeIn 0.8s 0.4s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(5){animation:fadeIn 0.8s 0.5s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(6){animation:fadeIn 0.8s 0.6s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(7){animation:fadeIn 0.8s 0.7s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(8){animation:fadeIn 0.8s 0.8s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(9){animation:fadeIn 0.8s 0.8s forwards cubic-bezier(0.11,0,0.5,0);}
-.hero-text span:nth-child(10){animation:fadeIn 0.8s 0.8s forwards cubic-bezier(0.11,0,0.5,0);}
-
-/* stagger - tagline */
-.hero-sub span:nth-child(1){animation:fadeIn 0.6s 0.2s forwards;}
-.hero-sub span:nth-child(2){animation:fadeIn 0.6s 0.35s forwards;}
-.hero-sub span:nth-child(3){animation:fadeIn 0.6s 0.5s forwards;}
-
-@keyframes fadeIn{
-  100%{
-    opacity:1;
-    filter:blur(0);
-  }
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero-text{font-size:42px}
-}
-
-@media(max-width:600px){
-  .nav{
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .nav-group{
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  .btn{
-    flex:1;
-    text-align:center;
-  }
-
-  .hero-text{
-    font-size:30px;
-    line-height:1.3;
-  }
+/* Style your button globally */
+button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
 }
